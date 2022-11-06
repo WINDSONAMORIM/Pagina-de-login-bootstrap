@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#carouselExampleControls{
+    width: 100vw;
+    height: 100vh;    
+    background-image: url(../assets/imagens/background.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;    
+}
+
+.container{
+    border-radius: 20px 0 20px 0 !important;
+}
+
+.container .container{
+    background-color: rgba(255, 255, 255, .3);
+    backdrop-filter: blur(10px);
+}
+
+form button{
+    background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+}

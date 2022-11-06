@@ -1,0 +1,61 @@
+body{ 
+    height: 100vh;
+    background-image: url(../assets/imagens/background.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;    
+}
+
+header{
+    background-color: #02254457;
+}
+
+#user{
+    position: absolute;
+}
+
+#icon{
+    position: absolute;
+    top: 1vh;
+    right:2vw;    
+}
+
+#off{
+    position: absolute;
+    bottom: 2vh;
+    right:2vw;  
+}
+
+#btnInserir{
+    border-radius: 10px;
+    background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+    color: white;
+    border-color: rgb(146, 146, 218);
+}
+
+/*
+#tabelaLista th {
+    background-color: #2927a39f;
+    color: white;
+    font-size: 1.3em;    
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2b7;    
+}
+
+tr:nth-child(odd) {
+    background-color: #0735998c;
+    color: #ffffff
+}
+
+tr, td {
+    border-bottom: 1px solid #ddd;
+    padding: 5px;
+}
+
+tr:hover {
+    background-color: #3b29df;
+    color: white
+}
+*/
