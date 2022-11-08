@@ -87,6 +87,6 @@ function logarUsuario(e){
 
 const myCarousel = document.querySelector('#carouselExampleControls')
 const carousel = new bootstrap.Carousel(myCarousel, {
-  interval: false,
-  wrap: false
+  interval: 9000
+  
 })
