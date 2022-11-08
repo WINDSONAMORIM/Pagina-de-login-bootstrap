@@ -84,7 +84,9 @@ function logarUsuario(e){
   })();
 
   formLogar.addEventListener('submit',logarUsuario)
-  //btnLogar.addEventListener('click',logarUsuario)
 
-//btnCadastrar.onclick = salvarUsuario;
-//btnLogar.onclick = logarUsuario;
+const myCarousel = document.querySelector('#carouselExampleControls')
+const carousel = new bootstrap.Carousel(myCarousel, {
+  interval: false,
+  wrap: false
+})
