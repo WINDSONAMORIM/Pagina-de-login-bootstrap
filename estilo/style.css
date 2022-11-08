@@ -6,10 +6,8 @@
 
 #carouselExampleControls{
     width: 100vw;
-    height: 100vh;    
-    background-image: url(../assets/imagens/background.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
+    height: 100vh;   
+    background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
     background-size: 100% 100%;    
 }
 

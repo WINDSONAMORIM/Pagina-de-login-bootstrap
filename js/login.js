@@ -10,24 +10,6 @@ const atualizaUsuario = (ususario) => localStorage.setItem('usuario', JSON.strin
 const recuperaUsuario = () => JSON.parse(localStorage.getItem('usuario') || '[]');
 const usuarios = recuperaUsuario(); 
 
-//const email = document.getElementById('emailCadastro')
-//email.onblur = emailCadastrado; 
-
-function emailCadastrado(){
-    const usuarioCadastrado = usuarios.some((dado)=>{
-        return dado.email === email.value
-    })
-
-    if(usuarioCadastrado){        
-        formLogar.style.left = "25px"
-        formCadastrar.style.left = "450px"
-        navScroll.style.left = "0px"
-
-        formLogar.emailLogin.value = email.value;
-        alert("E-mail Cadastrado")
-    }    
-}
-
 function salvarUsuario(e){
     e.preventDefault();
     const email = formCadastrar.emailCadastro.value;
@@ -37,7 +19,17 @@ function salvarUsuario(e){
     if(senha != confSenha){
         alert('Senhas Diferentes')
         return
-    }        
+    } 
+
+    const usuarioCadastrado = usuarios.some((dado)=>{
+        return dado.email === formCadastrar.emailCadastro.value
+    })
+
+    if(usuarioCadastrado){        
+        formLogar.emailLogin.value = formCadastrar.emailCadastro.value;
+        alert("E-mail Cadastrado")
+        return
+    } 
 
     usuarios.push({
         id: usuarios.length +1,
@@ -46,14 +38,10 @@ function salvarUsuario(e){
     });
 
     atualizaUsuario(usuarios);
-/*
-    formCadastrar.reset();
-    
-    formLogar.style.left = "25px"
-    formCadastrar.style.left = "450px"
-    navScroll.style.left = "0px"
 
-    formLogar.emailLogin.value = email;*/
+    formCadastrar.reset();
+
+    formLogar.emailLogin.value = email;
 }
 
 function logarUsuario(e){
@@ -73,6 +61,27 @@ function logarUsuario(e){
         alert("Dados incorretos")
     }    
 }
+//validação campos obrigatórios
+(function() {
+    'use strict';
+    window.addEventListener('load', function() {
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.getElementsByClassName('needs-validation');
+      // Loop over them and prevent submission
+      var validation = Array.prototype.filter.call(forms, function(form) {
+        form.addEventListener('submit', function(event) {
+          if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+            form.classList.add('was-validated');
+          }else{          
+          console.log('deubom')
+          salvarUsuario(event);
+          }
+        }, false);
+      });
+    }, false);
+  })();
 
-btnCadastrar.onclick = salvarUsuario;
-btnLogar.onclick = logarUsuario;
+//btnCadastrar.onclick = salvarUsuario;
+//btnLogar.onclick = logarUsuario;
