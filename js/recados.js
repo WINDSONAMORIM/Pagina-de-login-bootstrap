@@ -34,7 +34,7 @@ function preencher(){
     const recado = recados.filter((recado) =>{
         return recado.email == userLogado.email  
     })
-     
+    bodyRecado.innerHTML = "" 
     recado.forEach((element) => {
         criarPlanilha()
 
@@ -72,28 +72,10 @@ function inserir(){
             descricao: document.getElementById('inputDescricao').value
         })
 
-        criarPlanilha()
-        coluna1.innerHTML = motivo;
-        coluna2.innerHTML = descricao;
-        coluna3.appendChild(imgEditar)
-        coluna3.appendChild(imgExcluir)
-
-        imgEditar.addEventListener('click',(e) =>{
-            const rowId = e.target.parentNode.parentNode.id;
-            editar(rowId)     
-        })
-
-        imgExcluir.addEventListener('click',(e)=>{
-            const linha = e.target.parentNode.parentNode;
-            recados = recados.filter(dado => dado.id != linha.id)
-            atualizaRecado(recados);
-            linha.remove();
-        })
-               
         atualizaRecado(recados);
         document.getElementById('inputMotivo').value = "";
         document.getElementById('inputDescricao').value = ""; 
-
+        preencher();
     }        
 }
 

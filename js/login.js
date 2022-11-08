@@ -1,8 +1,8 @@
 const formLogar = document.querySelector('#formLogin');
 const formCadastrar = document.querySelector('#formCadastro');
 
-const btnCadastrar = document.getElementById('btnCadastrar');
-const btnLogar = document.getElementById('btnLogar');
+//const btnCadastrar = document.getElementById('btnCadastrar');
+//const btnLogar = document.getElementById('btnLogar');
 
 
 const atualizaUsuario = (ususario) => localStorage.setItem('usuario', JSON.stringify(ususario));
@@ -82,6 +82,9 @@ function logarUsuario(e){
       });
     }, false);
   })();
+
+  formLogar.addEventListener('submit',logarUsuario)
+  //btnLogar.addEventListener('click',logarUsuario)
 
 //btnCadastrar.onclick = salvarUsuario;
 //btnLogar.onclick = logarUsuario;
